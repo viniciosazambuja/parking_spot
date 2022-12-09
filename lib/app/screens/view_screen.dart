@@ -7,6 +7,8 @@ import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 import 'package:parking_spot/app/screens/home_screen.dart';
 
 import '../components/menu_component.dart';
+import '../components/text_component.dart';
+import '../components/text_field_component.dart';
 import '../controllers/parking_spot_controller.dart';
 import '../models/parking_spot_model.dart';
 
@@ -58,102 +60,22 @@ class _EditPageState extends State<ViewPage> {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                'Número da Vaga',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  enabled: false,
-                  textAlign: TextAlign.center,
-                  controller: _parkingSpotNumber,
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Placa do carro',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  enabled: false,
-                  textAlign: TextAlign.center,
-                  controller: _licensePlateCar,
-                  keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Marca do carro',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  enabled: false,
-                  textAlign: TextAlign.center,
-                  controller: _brandCar,
-                  keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Modelo do carro',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  enabled: false,
-                  textAlign: TextAlign.center,
-                  controller: _modelCar,
-                  keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Cor do carro',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  enabled: false,
-                  textAlign: TextAlign.center,
-                  controller: _colorCar,
-                  keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Proprietário do veículo',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  enabled: false,
-                  textAlign: TextAlign.center,
-                  controller: _responsibleName,
-                  keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Apartamento',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  enabled: false,
-                  textAlign: TextAlign.center,
-                  controller: _apartment,
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Bloco',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  enabled: false,
-                  textAlign: TextAlign.center,
-                  controller: _block,
-                  keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)
-              ),
+              TextComponent(text: 'Número da vaga'),
+              TextFieldComponent(controller: _parkingSpotNumber, enabled: false),
+              TextComponent(text: 'Placa do carro'),
+              TextFieldComponent(controller: _licensePlateCar, enabled: false),
+              TextComponent(text: 'Marca do carro'),
+              TextFieldComponent(controller: _brandCar, enabled: false),
+              TextComponent(text: 'Modelo do carro'),
+              TextFieldComponent(controller: _modelCar, enabled: false),
+              TextComponent(text: 'Cor do carro'),
+              TextFieldComponent(controller: _colorCar, enabled: false),
+              TextComponent(text: 'Nome do responsável'),
+              TextFieldComponent(controller: _responsibleName, enabled: false),
+              TextComponent(text: 'Apartamento'),
+              TextFieldComponent(controller: _apartment, enabled: false),
+              TextComponent(text: 'Bloco'),
+              TextFieldComponent(controller: _block, enabled: false),
               ElevatedButton(
                   onPressed: () {
                     Get.to(MyHomePage(title: 'Lista de Vagas'));

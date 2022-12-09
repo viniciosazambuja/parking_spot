@@ -6,6 +6,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 
 import '../components/menu_component.dart';
+import '../components/text_component.dart';
+import '../components/text_field_component.dart';
 import '../controllers/parking_spot_controller.dart';
 import '../models/parking_spot_model.dart';
 import 'home_screen.dart';
@@ -44,94 +46,22 @@ class _AboutPageState extends State<CreatePage> {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                'Número da vaga',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  textAlign: TextAlign.center,
-                  controller: _parkingSpotNumber,
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Placa do veículo',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  textAlign: TextAlign.center,
-                  controller: _licensePlateCar,
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Marca do veículo',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  textAlign: TextAlign.center,
-                  controller: _brandCar,
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Modelo do veículo',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  textAlign: TextAlign.center,
-                  controller: _modelCar,
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Cor do veículo',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  textAlign: TextAlign.center,
-                  controller: _colorCar,
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Proprietário do veículo',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  textAlign: TextAlign.center,
-                  controller: _responsibleName,
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Apartamento',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  textAlign: TextAlign.center,
-                  controller: _apartment,
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)
-              ),
-              Text(
-                'Bloco',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                  textAlign: TextAlign.center,
-                  controller: _block,
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)
-              ),
+              TextComponent(text: 'Número da vaga'),
+              TextFieldComponent(controller: _parkingSpotNumber, enabled: true),
+              TextComponent(text: 'Placa do carro'),
+              TextFieldComponent(controller: _licensePlateCar, enabled: true),
+              TextComponent(text: 'Marca do carro'),
+              TextFieldComponent(controller: _brandCar, enabled: true),
+              TextComponent(text: 'Modelo do carro'),
+              TextFieldComponent(controller: _modelCar, enabled: true),
+              TextComponent(text: 'Cor do carro'),
+              TextFieldComponent(controller: _colorCar, enabled: true),
+              TextComponent(text: 'Nome do responsável'),
+              TextFieldComponent(controller: _responsibleName, enabled: true),
+              TextComponent(text: 'Apartamento'),
+              TextFieldComponent(controller: _apartment, enabled: true),
+              TextComponent(text: 'Bloco'),
+              TextFieldComponent(controller: _block, enabled: true),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

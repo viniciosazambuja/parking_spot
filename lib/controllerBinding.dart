@@ -9,7 +9,6 @@ class ControllerBinding implements Bindings  {
   @override
   void dependencies(){
     Get.lazyPut<ParkingSpotController>(() => ParkingSpotController());
-    // Get.lazyPut<ThemeController>(() => ThemeController());
   }
 
 }
