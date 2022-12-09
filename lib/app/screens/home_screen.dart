@@ -74,8 +74,31 @@ class _MyHomePageState extends State<MyHomePage> {
                             const SizedBox(width: 8),
                             IconButton(
                               icon: const Icon(Icons.delete),
-                              onPressed: () {
-                                controller.deleteParkingSpot(controller.listParkingSpotObs[index]);
+                              onPressed:  () async {
+                                var response =  await controller.deleteParkingSpot(controller.listParkingSpotObs[index]);
+                                if(response != false){
+
+                                  Get.snackbar(
+                                    "Sucesso",
+                                    "Excluido com Sucesso",
+                                    icon: Icon(Icons.check, color: Colors.white),
+                                    snackPosition: SnackPosition.BOTTOM,
+                                    backgroundColor: Colors.lightGreen,
+                                    colorText: Colors.white,
+
+                                  );
+
+                                }else{
+                                  Get.snackbar(
+                                      "Houve um erro",
+                                      "Deu ruim",
+                                      icon: Icon(Icons.error, color: Colors.white),
+                                      snackPosition: SnackPosition.BOTTOM,
+                                      backgroundColor: Colors.blue,
+                                      //   borderColor: Colors.blue
+                                      colorText: Colors.white
+                                  );
+                                }
                               },
                             ),
                             const SizedBox(width: 8),
